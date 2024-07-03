@@ -87,7 +87,7 @@ const Footer = () => {
             </div>
             <div className="flex flex-col sm:flex-row justify-around sm:justify-between px-10 sm:px-20 md:px-40 items-center h-32 text-center">
                 <p className="text-neutral-500 text-sm">
-                    Copyright © 2024 SORA Clothing. Powered by SORA Clothing.
+                    Copyright © 2024 DormDojo. Powered by DormDojo.
                 </p>
                 <div className="flex gap-5">
                     <Instagram />
