@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Instagram from "./socials/Instagram";
 import Discord from "./socials/Discord";
 import Tiktok from "./socials/Tiktok";
@@ -19,6 +18,7 @@ import {
     FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
+import DormDojoLogo from "../DormDojoLogo/DormDojoLogo";
 
 const formSchema = z.object({
     email: z
@@ -46,14 +46,7 @@ const Footer = () => {
     return (
         <footer className="h-96">
             <div className="flex flex-col sm:flex-row justify-around sm:justify-between items-center px-10 sm:px-20 md:px-40 h-60 mt-4 border-y-2">
-                <div>
-                <Image
-                    src="/logo.webp"
-                    alt="DormDojo Logo"
-                    width={358 * 0.6}
-                    height={54 & 0.6}
-                />
-                </div>
+                <DormDojoLogo/>
                 <div>
                     <Form {...form}>
                         <form

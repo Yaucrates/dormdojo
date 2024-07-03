@@ -1,5 +1,4 @@
 "use client";
-import Image from "next/image";
 import Link from "next/link";
 
 import { Menu, ShoppingCart } from "lucide-react";
@@ -7,18 +6,14 @@ import Navigation from "./Navigation";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import MobileNavigation from "./MobileNavigation";
+import DormDojoLogo from "../DormDojoLogo/DormDojoLogo";
 
 const Header = () => {
     return (
-        <header className="flex flex-row justify-between items-center p-8">
-            <div className="flex gap-4">
+        <header className="flex flex-row justify-between items-center">
+            <div className="flex items-center gap-4">
                 <Link href="/">
-                    <Image
-                        src="/logo.webp"
-                        alt="DormDojo Logo"
-                        width={358 * 0.6}
-                        height={54 & 0.6}
-                    />
+                    <DormDojoLogo/>
                 </Link>
                 <div className="hidden sm:block">
                     <Navigation />

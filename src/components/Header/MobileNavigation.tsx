@@ -2,9 +2,9 @@
 
 import * as React from "react";
 import { useState } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
+import DormDojoLogo from "@/components/DormDojoLogo/DormDojoLogo"
 
 const MobileNavigation = () => {
     const [clothesActive, setClothesActive] = useState(false);
@@ -12,13 +12,7 @@ const MobileNavigation = () => {
 
     return (
         <nav className="flex flex-col justify-center z-20">
-            <Image
-                src="/sora_logo.webp"
-                alt="Sora Logo"
-                className="mx-6 mt-6 mb-4"
-                width={1755 * 0.07}
-                height={586 * 0.07}
-            />
+            <DormDojoLogo/>
             <div className="flex flex-col gap-[1px]">
                 <div>
                     <div
