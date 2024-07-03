@@ -48,10 +48,10 @@ const Footer = () => {
             <div className="flex flex-col sm:flex-row justify-around sm:justify-between items-center px-10 sm:px-20 md:px-40 h-60 mt-4 border-y-2">
                 <div>
                 <Image
-                    src="/sora_logo.webp"
-                    alt="Sora Logo"
-                    width={1755 * 0.07}
-                    height={586 * 0.07}
+                    src="/logo.webp"
+                    alt="DormDojo Logo"
+                    width={358 * 0.6}
+                    height={54 & 0.6}
                 />
                 </div>
                 <div>

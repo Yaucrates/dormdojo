@@ -5,11 +5,7 @@ import Link from "next/link";
 import { Menu, ShoppingCart } from "lucide-react";
 import Navigation from "./Navigation";
 
-import {
-    Sheet,
-    SheetContent,
-    SheetTrigger,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import MobileNavigation from "./MobileNavigation";
 
 const Header = () => {
@@ -18,14 +14,14 @@ const Header = () => {
             <div className="flex gap-4">
                 <Link href="/">
                     <Image
-                        src="/sora_logo.webp"
-                        alt="Sora Logo"
-                        width={1755 * 0.07}
-                        height={586 * 0.07}
+                        src="/logo.webp"
+                        alt="DormDojo Logo"
+                        width={358 * 0.6}
+                        height={54 & 0.6}
                     />
                 </Link>
                 <div className="hidden sm:block">
-                    <Navigation/>
+                    <Navigation />
                 </div>
             </div>
             <div className="flex gap-4">
@@ -38,7 +34,7 @@ const Header = () => {
                             <Menu className="mr-5" />
                         </SheetTrigger>
                         <SheetContent className="p-0 m-0 border-0">
-                            <MobileNavigation/>
+                            <MobileNavigation />
                         </SheetContent>
                     </Sheet>
                 </div>
