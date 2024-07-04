@@ -12,7 +12,30 @@ import {
 import Link from "next/link";
 
 // rings, necklaces, watches, wallets, shoes
-const components: { title: string; href: string; description: string }[] = [
+const clothes: { title: string; href: string; description: string }[] = [
+    {
+        title: "ALL",
+        href: "",
+        description: "Checkout all SORA clothing.",
+    },
+    {
+        title: "SHIRTS",
+        href: "",
+        description: "Checkout SORA shirts.",
+    },
+    {
+        title: "SWEATERS",
+        href: "",
+        description: "Checkout SORA sweaters.",
+    },
+    {
+        title: "BOTTOMS",
+        href: "",
+        description: "Checkout SORA bottoms.",
+    },
+];
+
+const accesssories: { title: string; href: string; description: string }[] = [
     {
         title: "ALL ACCESSORIES",
         href: "",
@@ -96,18 +119,15 @@ const Navigation = () => {
                                     </a>
                                 </NavigationMenuLink>
                             </li>
-                            <ListItem href="/" title="ALL">
-                                Checkout all SORA clothing.
-                            </ListItem>
-                            <ListItem href="/" title="SHIRTS">
-                                Checkout SORA shirts.
-                            </ListItem>
-                            <ListItem href="/" title="SWEATERS">
-                                Checkout SORA sweaters.
-                            </ListItem>
-                            <ListItem href="/" title="BOTTOMS">
-                                Checkout SORA bottoms.
-                            </ListItem>
+                            {clothes.map((clothing) => (
+                                <ListItem
+                                    key={clothing.title}
+                                    href={clothing.href}
+                                    title={clothing.title}
+                                >
+                                    {clothing.description}
+                                </ListItem>
+                            ))}
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
@@ -115,13 +135,13 @@ const Navigation = () => {
                     <NavigationMenuTrigger>ACCESSORIES</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                            {components.map((component) => (
+                            {accesssories.map((accessory) => (
                                 <ListItem
-                                    key={component.title}
-                                    title={component.title}
-                                    href={component.href}
+                                    key={accessory.title}
+                                    title={accessory.title}
+                                    href={accessory.href}
                                 >
-                                    {component.description}
+                                    {accessory.description}
                                 </ListItem>
                             ))}
                         </ul>
@@ -132,7 +152,7 @@ const Navigation = () => {
                         <NavigationMenuLink
                             className={navigationMenuTriggerStyle()}
                         >
-                            FAQ
+                            Guides
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
