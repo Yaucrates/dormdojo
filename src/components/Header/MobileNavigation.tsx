@@ -12,7 +12,9 @@ const MobileNavigation = () => {
 
     return (
         <nav className="flex flex-col justify-center z-20">
+            <div className="m-8">
             <DormDojoLogo/>
+            </div>
             <div className="flex flex-col gap-[1px]">
                 <div>
                     <div

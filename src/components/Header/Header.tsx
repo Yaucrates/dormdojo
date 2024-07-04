@@ -12,7 +12,7 @@ const Header = () => {
     return (
         <header className="flex flex-row justify-between items-center">
             <div className="flex items-center gap-4">
-                <Link href="/">
+                <Link href="/" className="m-8">
                     <DormDojoLogo/>
                 </Link>
                 <div className="hidden sm:block">
