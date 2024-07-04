@@ -10,63 +10,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-
-// rings, necklaces, watches, wallets, shoes
-const clothes: { title: string; href: string; description: string }[] = [
-    {
-        title: "ALL",
-        href: "",
-        description: "Checkout all SORA clothing.",
-    },
-    {
-        title: "SHIRTS",
-        href: "",
-        description: "Checkout SORA shirts.",
-    },
-    {
-        title: "SWEATERS",
-        href: "",
-        description: "Checkout SORA sweaters.",
-    },
-    {
-        title: "BOTTOMS",
-        href: "",
-        description: "Checkout SORA bottoms.",
-    },
-];
-
-const accesssories: { title: string; href: string; description: string }[] = [
-    {
-        title: "ALL ACCESSORIES",
-        href: "",
-        description: "Get SORA accessories.",
-    },
-    {
-        title: "SHOES",
-        href: "",
-        description: "Get SORA shoes.",
-    },
-    {
-        title: "WALLETS",
-        href: "",
-        description: "Get SORA wallets.",
-    },
-    {
-        title: "RINGS",
-        href: "",
-        description: "Get SORA rings.",
-    },
-    {
-        title: "NECKLACES",
-        href: "",
-        description: "Get SORA necklaces.",
-    },
-    {
-        title: "MISC",
-        href: "",
-        description: "Get SORA items.",
-    },
-];
+import { amenities, explore } from "./Selection";
 
 const ListItem = React.forwardRef<
     React.ElementRef<"a">,
@@ -101,7 +45,7 @@ const Navigation = () => {
         <NavigationMenu>
             <NavigationMenuList>
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>CLOTHES</NavigationMenuTrigger>
+                    <NavigationMenuTrigger>EXPLORE</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
                             <li className="row-span-4 col-span-2">
@@ -111,37 +55,37 @@ const Navigation = () => {
                                         href="/"
                                     >
                                         <div className="mb-2 mt-4 text-lg font-medium">
-                                            Latest Drops
+                                            DORM ESSENTIALS
                                         </div>
                                         <p className="text-sm leading-tight text-muted-foreground">
-                                            Checkout our newest items.
+                                            Checkout our collection of the most essential items for any dorm to have! 
                                         </p>
                                     </a>
                                 </NavigationMenuLink>
                             </li>
-                            {clothes.map((clothing) => (
+                            {explore.map((item) => (
                                 <ListItem
-                                    key={clothing.title}
-                                    href={clothing.href}
-                                    title={clothing.title}
+                                    key={item.title}
+                                    href={item.href}
+                                    title={item.title}
                                 >
-                                    {clothing.description}
+                                    {item.description}
                                 </ListItem>
                             ))}
                         </ul>
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <NavigationMenuTrigger>ACCESSORIES</NavigationMenuTrigger>
+                    <NavigationMenuTrigger>AMENITIES</NavigationMenuTrigger>
                     <NavigationMenuContent>
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                            {accesssories.map((accessory) => (
+                            {amenities.map((amenity) => (
                                 <ListItem
-                                    key={accessory.title}
-                                    title={accessory.title}
-                                    href={accessory.href}
+                                    key={amenity.title}
+                                    title={amenity.title}
+                                    href={amenity.href}
                                 >
-                                    {accessory.description}
+                                    {amenity.description}
                                 </ListItem>
                             ))}
                         </ul>

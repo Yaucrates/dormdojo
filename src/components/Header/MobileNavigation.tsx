@@ -5,6 +5,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
 import DormDojoLogo from "@/components/DormDojoLogo/DormDojoLogo"
+import { amenities, explore } from "./Selection";
 
 const MobileNavigation = () => {
     const [clothesActive, setClothesActive] = useState(false);
@@ -21,7 +22,7 @@ const MobileNavigation = () => {
                         className="flex justify-between p-4 items-center w-full h-20 font-semibold hover:bg-red-200 hover:cursor-pointer"
                         onClick={() => setClothesActive(!clothesActive)}
                     >
-                        <p>CLOTHES</p>
+                        <p>EXPLORE</p>
                         <ChevronDown
                             className={`transition duration-200 ${
                                 clothesActive && "rotate-180"
@@ -30,10 +31,9 @@ const MobileNavigation = () => {
                     </div>
                     {clothesActive &&
                     <div className="flex flex-col">
-                        <Link href="/" className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">ALL</Link>
-                        <Link href="/" className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">SHIRTS</Link>
-                        <Link href="/" className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">SWEATERS</Link>
-                        <Link href="/" className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">BOTTOMS</Link>
+                        {explore.map((item =>(
+                            <Link href={item.href} key={item.title} className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">{item.title}</Link>
+                        )))}
                     </div>}
                 </div>
                 <div>
@@ -41,7 +41,7 @@ const MobileNavigation = () => {
                         className="flex justify-between p-4 items-center w-full h-20 font-semibold hover:bg-red-200 hover:cursor-pointer"
                         onClick={() => setAccessoriesActive(!accessoriesActive)}
                     >
-                        <p>ACCESSORIES</p>
+                        <p>AMENITIES</p>
                         <ChevronDown
                             className={`transition duration-200 ${
                                 accessoriesActive && "rotate-180"
@@ -50,19 +50,16 @@ const MobileNavigation = () => {
                     </div>
                     {accessoriesActive &&
                     <div className="flex flex-col">
-                        <Link href="/" className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">ALL ACCESSORIES</Link>
-                        <Link href="/" className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">WALLETS</Link>
-                        <Link href="/" className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">NECKLACES</Link>
-                        <Link href="/" className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">SHOES</Link>
-                        <Link href="/" className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">RINGS</Link>
-                        <Link href="/" className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">MISC</Link>
+                        {amenities.map((amenity =>(
+                            <Link href={amenity.href} key={amenity.title} className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">{amenity.title}</Link>
+                        )))}
                     </div>}
                 </div>
                 <Link
                     href="/"
                     className="flex p-4 items-center w-full h-20 font-semibold hover:bg-red-200"
                 >
-                    FAQ
+                    GUIDES
                 </Link>
             </div>
         </nav>
