@@ -13,9 +13,9 @@ const MobileNavigation = () => {
 
     return (
         <nav className="flex flex-col justify-center z-20">
-            <div className="m-8">
+            <Link href="/" className="m-8">
             <DormDojoLogo/>
-            </div>
+            </Link>
             <div className="flex flex-col gap-[1px]">
                 <div>
                     <div
@@ -56,7 +56,7 @@ const MobileNavigation = () => {
                     </div>}
                 </div>
                 <Link
-                    href="/"
+                    href="/guides"
                     className="flex p-4 items-center w-full h-20 font-semibold hover:bg-red-200"
                 >
                     GUIDES
