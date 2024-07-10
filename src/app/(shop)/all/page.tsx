@@ -9,8 +9,10 @@ export default function ShopAllPage() {
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 p-8">
                 {products.map((product, i) => 
-                    <div className="bg-neutral-400 w-full" key={i}>
-                        asdf
+                    <div className="flex flex-col items-center gap-2 p-4 w-full rounded-lg hover:bg-blue-100 duration-300 transition-all" key={i}>
+                        <Image src={product.image_url} alt="bean bag chair" width={2250} height={1500} className="rounded-lg"/>
+                        <h2 className="text-2xl font-light">{product.name}</h2>
+                        <p className="font-light">{`$${product.price.toFixed(2)}`}</p>
                     </div>
                 )}
             </div>
