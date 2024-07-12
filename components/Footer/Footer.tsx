@@ -46,7 +46,7 @@ const Footer = () => {
     return (
         <footer className="h-96">
             <div className="flex flex-col sm:flex-row justify-around sm:justify-between items-center px-10 sm:px-20 md:px-40 h-60 mt-4 border-y-2">
-                <DormDojoLogo/>
+                <DormDojoLogo />
                 <div>
                     <Form {...form}>
                         <form
@@ -62,13 +62,15 @@ const Footer = () => {
                                             Subscribe to Email List
                                         </FormLabel>
                                         <div className="flex gap-2">
-                                        <FormControl>
-                                            <Input
-                                                placeholder="example@gmail.com"
-                                                {...field}
-                                            />
-                                        </FormControl>
-                                        <Button type="submit">Submit</Button>
+                                            <FormControl>
+                                                <Input
+                                                    placeholder="example@gmail.com"
+                                                    {...field}
+                                                />
+                                            </FormControl>
+                                            <Button type="submit">
+                                                Submit
+                                            </Button>
                                         </div>
                                         <FormMessage />
                                     </FormItem>
