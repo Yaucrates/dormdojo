@@ -10,7 +10,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { amenities, explore } from "./Selection";
+import { amenities, explore } from "./selection";
 
 const ListItem = React.forwardRef<
     React.ElementRef<"a">,

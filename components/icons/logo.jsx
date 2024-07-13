@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-const DormDojoLogo = () => {
+const LogoIcon = () => {
     return (
         <Image
             src="/logo.webp"
@@ -11,4 +11,4 @@ const DormDojoLogo = () => {
     );
 };
 
-export default DormDojoLogo;
+export default LogoIcon;

@@ -1,19 +1,18 @@
-"use client";
 import Link from "next/link";
 
 import { Menu, ShoppingCart } from "lucide-react";
-import Navigation from "./Navigation";
 
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
-import MobileNavigation from "./MobileNavigation";
-import DormDojoLogo from "../DormDojoLogo/DormDojoLogo";
+import MobileNavigation from "./mobile-navigation";
+import LogoIcon from "@/components/icons/logo";
+import Navigation from "./navigation";
 
-const Header = () => {
+const Header = async () => {
     return (
         <header className="flex flex-row justify-between items-center">
             <div className="flex items-center gap-4">
                 <Link href="/" className="m-8">
-                    <DormDojoLogo/>
+                    <LogoIcon/>
                 </Link>
                 <div className="hidden sm:block">
                     <Navigation />

@@ -4,8 +4,8 @@ import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import DormDojoLogo from "@/components/DormDojoLogo/DormDojoLogo"
-import { amenities, explore } from "./Selection";
+import { amenities, explore } from "./selection";
+import LogoIcon from "@/components/icons/logo";
 
 const MobileNavigation = () => {
     const [clothesActive, setClothesActive] = useState(false);
@@ -14,7 +14,7 @@ const MobileNavigation = () => {
     return (
         <nav className="flex flex-col justify-center z-20">
             <Link href="/" className="m-8">
-            <DormDojoLogo/>
+            <LogoIcon/>
             </Link>
             <div className="flex flex-col gap-[1px]">
                 <div>

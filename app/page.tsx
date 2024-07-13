@@ -1,6 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
+export const metadata = {
+    description: 'High-performance ecommerce store built with Next.js, Vercel, and Shopify.',
+    openGraph: {
+      type: 'website'
+    }
+  };
+
 export default function Home() {
     return (
         <div className="flex flex-col min-[1000px]:flex-row justify-between items-center gap-1 min-[1000px]:gap-0">
