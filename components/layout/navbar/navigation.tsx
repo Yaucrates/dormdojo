@@ -44,7 +44,7 @@ ListItem.displayName = "ListItem";
 const Navigation = async () => {
     const collections = await getCollections();
 
-    const explore = [...collections.filter(collection => collection.title.startsWith('Explore: ')),
+    const exploreTmp = [...collections.filter(collection => collection.title.startsWith('Explore: ')),
         {
             handle: "misc",
             title: "Misc",
@@ -54,11 +54,11 @@ const Navigation = async () => {
             path: '/misc'
         }
     ];
-    explore.forEach(item => {
+    exploreTmp.forEach(item => {
         item.title = item.title.replace('Explore: ', '');
         item.path = item.path.replace('/search', '');
     })
-    console.log(explore)
+    console.log(exploreTmp)
 
     return (
         <NavigationMenu>
@@ -82,7 +82,7 @@ const Navigation = async () => {
                                     </a>
                                 </NavigationMenuLink>
                             </li>
-                            {explore.map((item) => (
+                            {exploreTmp.map((item) => (
                                 <ListItem
                                     key={item.handle}
                                     href={item.path}
