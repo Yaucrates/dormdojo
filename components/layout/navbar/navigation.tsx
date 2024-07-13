@@ -10,7 +10,8 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { amenities, explore } from "./selection";
+import { amenities } from "./selection";
+import { getCollections } from "@/lib/shopify";
 
 const ListItem = React.forwardRef<
     React.ElementRef<"a">,
@@ -40,7 +41,25 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-const Navigation = () => {
+const Navigation = async () => {
+    const collections = await getCollections();
+
+    const explore = [...collections.filter(collection => collection.title.startsWith('Explore: ')),
+        {
+            handle: "misc",
+            title: "Misc",
+            description: "Browse other essentials and accessories to create your perfect dorm.",
+            seo: { description: null, title: null },
+            updatedAt: '2024-07-13',
+            path: '/misc'
+        }
+    ];
+    explore.forEach(item => {
+        item.title = item.title.replace('Explore: ', '');
+        item.path = item.path.replace('/search', '');
+    })
+    console.log(explore)
+
     return (
         <NavigationMenu>
             <NavigationMenuList>
@@ -65,9 +84,9 @@ const Navigation = () => {
                             </li>
                             {explore.map((item) => (
                                 <ListItem
-                                    key={item.title}
-                                    href={item.href}
-                                    title={item.title}
+                                    key={item.handle}
+                                    href={item.path}
+                                    title={item.title.toUpperCase()}
                                 >
                                     {item.description}
                                 </ListItem>
