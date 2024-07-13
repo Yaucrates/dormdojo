@@ -4,10 +4,10 @@ import * as React from "react";
 import { useState } from "react";
 import Link from "next/link";
 import { ChevronDown } from "lucide-react";
-import { amenities, explore } from "./selection";
 import LogoIcon from "@/components/icons/logo";
+import { Collection } from "@/lib/shopify/types";
 
-const MobileNavigation = () => {
+const MobileNavigation = ({ explore, amenities }: { explore: Collection[], amenities: Collection[] }) => {
     const [clothesActive, setClothesActive] = useState(false);
     const [accessoriesActive, setAccessoriesActive] = useState(false);
 
@@ -32,7 +32,7 @@ const MobileNavigation = () => {
                     {clothesActive &&
                     <div className="flex flex-col">
                         {explore.map((item =>(
-                            <Link href={item.href} key={item.title} className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">{item.title}</Link>
+                            <Link href={item.path} key={item.handle} className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">{item.title}</Link>
                         )))}
                     </div>}
                 </div>
@@ -51,7 +51,7 @@ const MobileNavigation = () => {
                     {accessoriesActive &&
                     <div className="flex flex-col">
                         {amenities.map((amenity =>(
-                            <Link href={amenity.href} key={amenity.title} className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">{amenity.title}</Link>
+                            <Link href={amenity.path} key={amenity.handle} className="w-full h-16 p-4 hover:bg-neutral-200 cursor-pointer">{amenity.title.toUpperCase()}</Link>
                         )))}
                     </div>}
                 </div>

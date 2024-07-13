@@ -10,8 +10,7 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import Link from "next/link";
-import { amenities } from "./selection";
-import { getCollections } from "@/lib/shopify";
+import { Collection } from "@/lib/shopify/types";
 
 const ListItem = React.forwardRef<
     React.ElementRef<"a">,
@@ -41,25 +40,7 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-const Navigation = async () => {
-    const collections = await getCollections();
-
-    const exploreTmp = [...collections.filter(collection => collection.title.startsWith('Explore: ')),
-        {
-            handle: "misc",
-            title: "Misc",
-            description: "Browse other essentials and accessories to create your perfect dorm.",
-            seo: { description: null, title: null },
-            updatedAt: '2024-07-13',
-            path: '/misc'
-        }
-    ];
-    exploreTmp.forEach(item => {
-        item.title = item.title.replace('Explore: ', '');
-        item.path = item.path.replace('/search', '');
-    })
-    console.log(exploreTmp)
-
+const Navigation = ({ explore, amenities }: { explore: Collection[], amenities: Collection[] }) => {
     return (
         <NavigationMenu>
             <NavigationMenuList>
@@ -82,7 +63,7 @@ const Navigation = async () => {
                                     </a>
                                 </NavigationMenuLink>
                             </li>
-                            {exploreTmp.map((item) => (
+                            {explore.map((item) => (
                                 <ListItem
                                     key={item.handle}
                                     href={item.path}
@@ -100,9 +81,9 @@ const Navigation = async () => {
                         <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                             {amenities.map((amenity) => (
                                 <ListItem
-                                    key={amenity.title}
-                                    title={amenity.title}
-                                    href={amenity.href}
+                                    key={amenity.handle}
+                                    title={amenity.title.toUpperCase()}
+                                    href={amenity.path}
                                 >
                                     {amenity.description}
                                 </ListItem>
