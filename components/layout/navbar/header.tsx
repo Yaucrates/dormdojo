@@ -7,12 +7,13 @@ import MobileNavigation from "./mobile-navigation";
 import LogoIcon from "@/components/icons/logo";
 import Navigation from "./navigation";
 import { getCollections } from "@/lib/shopify";
-import { getAmenities, getExplore } from "@/lib/data-fetching/special-collections";
+import { getAmenities, getExplore, getPinned } from "@/lib/data-fetching/special-collections";
 
 const Header = async () => {
     const collections = await getCollections();
     const explore = await getExplore(collections);
     const amenities = await getAmenities(collections);
+    const pinned = await getPinned(collections);
 
     return (
         <header className="flex flex-row justify-between items-center">
@@ -21,7 +22,7 @@ const Header = async () => {
                     <LogoIcon/>
                 </Link>
                 <div className="hidden sm:block">
-                    <Navigation explore={explore} amenities={amenities}/>
+                    <Navigation explore={explore} amenities={amenities} pinned={pinned}/>
                 </div>
             </div>
             <div className="flex gap-4">
@@ -34,7 +35,7 @@ const Header = async () => {
                             <Menu className="mr-5" />
                         </SheetTrigger>
                         <SheetContent className="p-0 m-0 border-0">
-                            <MobileNavigation explore={explore} amenities={amenities}/>
+                            <MobileNavigation explore={explore} amenities={amenities} />
                         </SheetContent>
                     </Sheet>
                 </div>

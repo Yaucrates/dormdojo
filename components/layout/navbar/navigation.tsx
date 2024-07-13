@@ -40,7 +40,7 @@ const ListItem = React.forwardRef<
 });
 ListItem.displayName = "ListItem";
 
-const Navigation = ({ explore, amenities }: { explore: Collection[], amenities: Collection[] }) => {
+const Navigation = ({ explore, amenities, pinned }: { explore: Collection[], amenities: Collection[], pinned: Collection }) => {
     return (
         <NavigationMenu>
             <NavigationMenuList>
@@ -52,13 +52,13 @@ const Navigation = ({ explore, amenities }: { explore: Collection[], amenities: 
                                 <NavigationMenuLink asChild>
                                     <a
                                         className="flex h-full w-full select-none flex-col justify-end rounded-md bg-gradient-to-b from-muted/50 to-muted p-6 no-underline outline-none focus:shadow-md"
-                                        href="/essentials"
+                                        href={pinned.path}
                                     >
                                         <div className="mb-2 mt-4 text-lg font-medium">
-                                            DORM ESSENTIALS
+                                            {pinned.title.toUpperCase()}
                                         </div>
                                         <p className="text-sm leading-tight text-muted-foreground">
-                                            Checkout our collection of the most essential items for any dorm to have! 
+                                            {pinned.description}
                                         </p>
                                     </a>
                                 </NavigationMenuLink>

@@ -21,7 +21,7 @@ export const getExplore = async (collections: Collection[]) => {
 }
 
 export const getAmenities = async (collections: Collection[]) => {
-    const explore = [...collections.filter(collection => collection.title.startsWith('Amenities: ')),
+    const amenities = [...collections.filter(collection => collection.title.startsWith('Amenities: ')),
         {
             handle: "other",
             title: "Other",
@@ -32,10 +32,19 @@ export const getAmenities = async (collections: Collection[]) => {
         }
     ];
 
-    explore.forEach(item => {
+    amenities.forEach(item => {
         item.title = item.title.replace('Amenities: ', '');
         item.path = item.path.replace('/search/amenities-', '');
     })
 
-    return explore as Collection[];
+    return amenities as Collection[];
+}
+
+export const getPinned = async (collections: Collection[]) => {
+    const pinned = collections.filter(collection => collection.title.startsWith('Pinned: '))[0]
+
+    pinned.title = pinned.title.replace('Pinned: ', '');
+    pinned.path = pinned.path.replace('/search/pinned-', '');
+
+    return pinned as Collection;
 }
