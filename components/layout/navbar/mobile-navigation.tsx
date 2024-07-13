@@ -56,10 +56,10 @@ const MobileNavigation = ({ explore, amenities }: { explore: Collection[], ameni
                     </div>}
                 </div>
                 <Link
-                    href="/guides"
+                    href="/dorm-living-crash-course"
                     className="flex p-4 items-center w-full h-20 font-semibold hover:bg-red-200"
                 >
-                    GUIDES
+                    Dorm Living Crash Course
                 </Link>
             </div>
         </nav>

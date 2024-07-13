@@ -92,11 +92,11 @@ const Navigation = ({ explore, amenities, pinned }: { explore: Collection[], ame
                     </NavigationMenuContent>
                 </NavigationMenuItem>
                 <NavigationMenuItem>
-                    <Link href="/guides" legacyBehavior passHref>
+                    <Link href="/dorm-living-crash-course" legacyBehavior passHref>
                         <NavigationMenuLink
                             className={navigationMenuTriggerStyle()}
                         >
-                            Guides
+                            Dorm Living Crash Course
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
