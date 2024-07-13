@@ -1,4 +1,4 @@
-const explore: { title: string; href: string; description: string }[] = [
+export const explore: { title: string; href: string; description: string }[] = [
     {
         title: "ALL",
         href: "/all",
