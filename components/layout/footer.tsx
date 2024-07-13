@@ -1,9 +1,9 @@
 "use client";
 
-import LogoIcon from "../icons/logo";
-import Instagram from "../icons/Instagram";
-import Tiktok from "../icons/Tiktok";
-import Discord from "../icons/Discord";
+import LogoIcon from "@/components/icons/logo";
+import Instagram from "@/components/icons/instagram";
+import Tiktok from "@/components/icons/tiktok";
+import Discord from "@/components/icons/discord";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
