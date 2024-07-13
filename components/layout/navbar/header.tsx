@@ -7,7 +7,7 @@ import MobileNavigation from "./mobile-navigation";
 import LogoIcon from "@/components/icons/logo";
 import Navigation from "./navigation";
 
-const Header = async () => {
+const Header = () => {
     return (
         <header className="flex flex-row justify-between items-center">
             <div className="flex items-center gap-4">
