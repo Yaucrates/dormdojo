@@ -25,7 +25,7 @@ export default function Home() {
                         ESSENTIALS
                     </h1>
                     <Link
-                        href="/essentials"
+                        href="/pinned-dorm-essentials"
                         className="bg-white w-56 h-12
                                             text-black text-xl font-normal
                                             flex justify-center items-center text-center"
