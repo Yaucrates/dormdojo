@@ -8,13 +8,15 @@ export const getExplore = async (collections: Collection[]) => {
             description: "Browse other essentials and accessories to create your perfect dorm.",
             seo: { description: null, title: null },
             updatedAt: '2024-07-13',
-            path: '/misc'
+            path: '/search/misc'
         }
     ];
 
     explore.forEach(item => {
         item.title = item.title.replace('Explore: ', '');
-        item.path = item.path.replace('/search/explore-', '');
+        item.path = item.path.replace('explore-', '');
+
+        if (item.path === '/search/all') item.path = '/search';
     })
 
     return explore as Collection[];
@@ -28,13 +30,13 @@ export const getAmenities = async (collections: Collection[]) => {
             description: "Explore everything else DormDojo has to offer.",
             seo: { description: null, title: null },
             updatedAt: '2024-07-13',
-            path: '/other'
+            path: '/search/other'
         }
     ];
 
     amenities.forEach(item => {
         item.title = item.title.replace('Amenities: ', '');
-        item.path = item.path.replace('/search/amenities-', '');
+        item.path = item.path.replace('amenities-', '');
     })
 
     return amenities as Collection[];
@@ -44,7 +46,7 @@ export const getPinned = async (collections: Collection[]) => {
     const pinned = collections.filter(collection => collection.title.startsWith('Pinned: '))[0]
 
     pinned.title = pinned.title.replace('Pinned: ', '');
-    pinned.path = pinned.path.replace('/search/pinned-', '');
+    pinned.path = pinned.path.replace('pinned-', '');
 
     return pinned as Collection;
 }
