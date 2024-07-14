@@ -14,9 +14,6 @@ export const getExplore = async (collections: Collection[]) => {
 
     explore.forEach(item => {
         item.title = item.title.replace('Explore: ', '');
-        item.path = item.path.replace('explore-', '');
-
-        if (item.path === '/search/all') item.path = '/search';
     })
 
     return explore as Collection[];
@@ -36,7 +33,6 @@ export const getAmenities = async (collections: Collection[]) => {
 
     amenities.forEach(item => {
         item.title = item.title.replace('Amenities: ', '');
-        item.path = item.path.replace('amenities-', '');
     })
 
     return amenities as Collection[];
@@ -46,7 +42,6 @@ export const getPinned = async (collections: Collection[]) => {
     const pinned = collections.filter(collection => collection.title.startsWith('Pinned: '))[0]
 
     pinned.title = pinned.title.replace('Pinned: ', '');
-    pinned.path = pinned.path.replace('pinned-', '');
 
     return pinned as Collection;
 }
