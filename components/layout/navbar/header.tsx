@@ -8,6 +8,9 @@ import LogoIcon from "@/components/icons/logo";
 import Navigation from "./navigation";
 import { getCollections } from "@/lib/shopify";
 import { getAmenities, getExplore, getPinned } from "@/lib/data-fetching/special-collections";
+import { Suspense } from "react";
+import OpenCart from "@/components/cart/open-cart";
+import Cart from "@/components/cart";
 
 const Header = async () => {
     const collections = await getCollections();
@@ -25,11 +28,13 @@ const Header = async () => {
                     <Navigation explore={explore} amenities={amenities} pinned={pinned}/>
                 </div>
             </div>
-            <div className="flex gap-4">
-                <Link href="/">
-                    <ShoppingCart className="mr-5" />
-                </Link>
-                <div className="block sm:hidden">
+            <div className="flex items-center gap-4">
+                <div className=" md:mr-5">
+                    <Suspense fallback={<OpenCart />}>
+                        <Cart />
+                    </Suspense>
+                </div>
+                <div className="block sm:hidden mt-1">
                     <Sheet>
                         <SheetTrigger>
                             <Menu className="mr-5" />

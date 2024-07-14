@@ -48,7 +48,7 @@ export default function Home() {
                         AMENITIES
                     </h1>
                     <Link
-                        href="/search"
+                        href="/search/explore-all"
                         className="bg-white w-56 h-12
                                             text-black text-xl font-normal
                                             flex justify-center items-center text-center"
