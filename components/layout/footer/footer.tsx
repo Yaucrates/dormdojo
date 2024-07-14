@@ -13,6 +13,8 @@ const Footer = async () => {
     const menuList = await getMenu("next-js-frontend-footer-menu");
     const menu = [{ title: "Home", path: "/" }, ...menuList];
 
+    console.log(menu)
+
     return (
         <footer className="h-96">
             <div className="flex flex-col gap-20 sm:flex-row items-center px-10 sm:px-20 md:px-40 py-10 sm:py-0 min-h-60 mt-4 border-y-2">
