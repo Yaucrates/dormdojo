@@ -20,7 +20,7 @@ export default function Home() {
                     height={858}
                     priority
                 />
-                <div className="absolute bottom-16 md:bottom-32 left-0 right-0 flex flex-col items-center gap-4">
+                <div className="absolute bottom-16 md:bottom-36 left-0 right-0 flex flex-col items-center gap-4">
                     <h1 className="text-white text-4xl font-light">
                         ESSENTIALS
                     </h1>
