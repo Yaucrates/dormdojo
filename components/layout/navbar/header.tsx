@@ -7,7 +7,7 @@ import MobileNavigation from "./mobile-navigation";
 import LogoIcon from "@/components/icons/logo";
 import Navigation from "./navigation";
 import { getCollections } from "@/lib/shopify";
-import { getAmenities, getExplore, getPinned } from "@/lib/data-fetching/special-collections";
+import { getAmenities, getExplore, getPinned } from "@/lib/special-collections";
 import { Suspense } from "react";
 import OpenCart from "@/components/cart/open-cart";
 import Cart from "@/components/cart";
